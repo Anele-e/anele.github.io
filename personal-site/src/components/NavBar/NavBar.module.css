@@ -1,0 +1,140 @@
+:root {
+    --nav-height: 72px;
+    --transform-fast: 0.25s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6rem;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color var(--transform-fast),
+                box-shadow var(--transform-fast),
+                height var(--transform-fast);
+
+}
+
+.scrolled {
+    background: #000;
+    box-shadow: 0 1px 0 rgba(red, green, blue, 0.1);
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: #180101;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks li {
+    display: flex;
+}
+
+.navLinks a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #180101;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0;
+}
+
+.navLinks a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0px;
+    height: 1px;
+    background-color: #fff;
+    transition: width var(--transform-fast);
+}
+
+.navLinks a:hover::after {
+    width: 100%;
+}
+
+/* .navLinks a {
+    color: red !important;
+} */
+
+.burger {
+display: none;
+flex-direction: column;
+gap: 5px;
+background: none;
+border: none;
+cursor: pointer;
+}
+
+.burger span {
+width: 22px;
+height: 2px;
+background: #fff;
+}
+
+.mobileMenu {
+position: fixed;
+inset: 0;
+background: #000;
+display: flex;
+flex-direction: column;
+padding: 2rem;
+z-index: 2000;
+}
+
+.close {
+align-self: flex-end;
+background: none;
+border: none;
+font-size: 1.5rem;
+color: #fff;
+cursor: pointer;
+}
+
+.mobileMenu ul {
+margin-top: 4rem;
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.mobileMenu a {
+text-decoration: none;
+color: #fff;
+font-size: 1.5rem;
+letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+.navLinks {
+display: none;
+}
+
+
+.burger {
+display: flex;
+}
+}

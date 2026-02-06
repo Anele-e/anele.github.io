@@ -1,0 +1,168 @@
+:root {
+    --max-width: 1100px;
+    --section-padding: 6rem;
+    --transision-fast: 0.25s ease;
+    --background: #ffffff;
+
+    --ring: #18181b;
+    --retro-black: #000000;
+    --retro-white: #ffffff;
+    --retro-medium: #777;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: var(--section-padding) 2rem;
+    background: var(--background);
+    color: #000;
+}
+
+.inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.imageWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.title span {
+    display: block;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 420px;
+    opacity: 0.85;
+}
+
+.buttonsStyle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.gameButton {
+    border: 2px solid var(--retro-medium);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    /* gap: 0.5rem; */
+    white-space: nowrap;
+    border-radius: 0.375rem;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+
+    height: 2.5rem;
+    padding: 0.75rem 2rem;
+}
+.retroButton {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.375rem;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+
+    height: 2.5rem;
+    padding: 0.75rem 2rem;
+
+    background-color: var(--retro-black);
+    color: #fff;
+
+    border: 2px solid var(--retro-black);
+
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.retroButton:hover {
+    background-color: var(--retro-black);
+    color: var(--retro-white);
+}
+
+.retroButton:focus-visible {
+    outline: none;
+    box-shadow: 
+        0 0 0 2px var(--ring),
+        0 0 0 4px var(--background);
+}
+
+.retroButton:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.contactButton {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.75rem;
+    /* border: 2px solid var(--retro-medium); */
+    transition: all var(--transision-fast);
+}
+
+.contactButton a {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #000;
+    background: #fff;
+
+    transition:
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.contactButton img {
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
+}
+
+.contactButton a:hover,
+.contactButton a:focus-visible {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+
+  transform: translateY(-2px);
+}
+
+
