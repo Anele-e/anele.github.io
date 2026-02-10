@@ -19,11 +19,18 @@ jobs:
 
       - name: Install dependencies
         working-directory: personal-site
-        run: npm ci
+        run: npm install
 
       - name: Build
         working-directory: personal-site
         run: npm run build
+
+      - name: List build output (diagnostic)
+        run: |
+          echo "=== personal-site folder ==="
+          ls -la personal-site
+          echo "=== personal-site/dist folder ==="
+          if [ -d personal-site/dist ]; then ls -la personal-site/dist; else echo "dist not found"; fi
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
