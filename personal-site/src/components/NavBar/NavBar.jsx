@@ -8,6 +8,13 @@ export default function NavBar() {
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
     const closeMenu = () => setIsMenuOpen(false);
 
+    useEffect(() => {
+        const onScroll = () => setIsScrolled(window.scrollY > 50);
+        window.addEventListener("scroll", onScroll);
+        onScroll();
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
         <>
             <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
@@ -44,9 +51,9 @@ export default function NavBar() {
 
                     <ul>
                         <li onClick={closeMenu}><a href="#about">About</a></li>
-                        <li onClick={closeMenu}><a href="#projects"></a>Projects</li>
+                        <li onClick={closeMenu}><a href="#projects">Projects</a></li>
                         <li onClick={closeMenu}><a href="#contact">Contact</a></li>
-                        <li onClick={closeMenu}><a href="#eductaiom">Education</a></li>
+                        <li onClick={closeMenu}><a href="#education">Education</a></li>
                     </ul>
                 </div>
             )}

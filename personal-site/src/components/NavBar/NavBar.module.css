@@ -1,6 +1,12 @@
 :root {
     --nav-height: 72px;
     --transform-fast: 0.25s ease;
+
+    --retro-black: #000000;
+    --retro-medium: #777;
+    --retro-white: #ffffff;
+
+    --retro-font: 'Courier New', Courier, monospace;
 }
 
 * {
@@ -15,6 +21,7 @@
     height: var(--nav-height);
     display: flex;
     align-items: center;
+    border-bottom: 1px solid var(--retro-medium);
     justify-content: space-between;
     padding: 0 6rem;
     z-index: 1000;
@@ -26,16 +33,17 @@
 }
 
 .scrolled {
-    background: #000;
+    background: var(--retro-white);
     box-shadow: 0 1px 0 rgba(red, green, blue, 0.1);
 }
 
 .logo {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     cursor: pointer;
     color: #180101;
+    font-family: var(--retro-font);
 }
 
 .navLinks {
@@ -57,7 +65,8 @@
     color: #180101;
     font-size: 0.9rem;
     letter-spacing: 0.08em;
-    padding: 0.25rem 0;
+    padding: 0.24rem 0;
+    font-family: var(--retro-font);
 }
 
 .navLinks a::after {
@@ -67,40 +76,43 @@
     bottom: -4px;
     width: 0px;
     height: 1px;
-    background-color: #fff;
+    background-color: var(--retro-medium);
     transition: width var(--transform-fast);
 }
 
 .navLinks a:hover::after {
     width: 100%;
+    /* text-decoration: var(--retro-medium); */
 }
 
-/* .navLinks a {
-    color: red !important;
-} */
 
 .burger {
-display: none;
-flex-direction: column;
-gap: 5px;
-background: none;
-border: none;
-cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    z-index: 1500;
 }
 
 .burger span {
-width: 22px;
-height: 2px;
-background: #fff;
+    width: 22px;
+    height: 2px;
+    background: #180101;
 }
 
 .mobileMenu {
 position: fixed;
-inset: 0;
-background: #000;
+top: 0;
+left: 0;
+right: 0;
+/* inset: 0; */
+background: var(--retro-white);
 display: flex;
 flex-direction: column;
-padding: 2rem;
+padding: 0px 2rem 0px 2rem;
 z-index: 2000;
 }
 
@@ -108,24 +120,29 @@ z-index: 2000;
 align-self: flex-end;
 background: none;
 border: none;
-font-size: 1.5rem;
-color: #fff;
+font-size: 1.4rem;
+color: var(--retro-black);
 cursor: pointer;
 }
 
 .mobileMenu ul {
-margin-top: 4rem;
+margin-top: 2rem;
 list-style: none;
 display: flex;
 flex-direction: column;
-gap: 2rem;
+gap: 1rem;
+align-items: start;
 }
 
 .mobileMenu a {
 text-decoration: none;
-color: #fff;
+color: var(--retro-black);
 font-size: 1.5rem;
 letter-spacing: 0.1em;
+}
+
+.mobileMenu a:hover {
+text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -137,4 +154,14 @@ display: none;
 .burger {
 display: flex;
 }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 0 1.5rem; }
+}
+
+
+@media (max-height: 520px) {
+    .navLinks { display: none; }
+    .burger { display: flex; }
 }

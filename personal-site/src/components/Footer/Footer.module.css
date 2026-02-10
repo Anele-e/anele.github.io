@@ -1,0 +1,83 @@
+:root {
+    --section-padding: 4rem;
+    --transision-fast: 0.25s ease;
+    --footer-height: 90px;
+
+    --ring: #18181b;
+    --retro-black: #000000;
+    --retro-white: #ffffff;
+    --retro-medium: #777;
+     --retro-font: 'Courier New', Courier, monospace;
+}
+
+.sectionFooter {
+    padding: var(--section-padding) 1.5rem;
+    background-color: var(--ring);
+    color: var(--retro-white);
+}
+
+.footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: var(--footer-height);
+    padding: 1rem 6rem;
+    background-color: var(--ring);
+    color: var(--retro-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-family: var(--retro-font);
+}
+
+.inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.link {
+    color: var(--retro-medium);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transision-fast);
+}
+
+
+.socialLinks a {
+    color: var(--retro-white);
+    text-decoration: none;
+    position: relative;
+    padding-right: 0.25rem;
+    transition: color var(--transision-fast);
+}
+
+.socialLinks a::after {
+    content: '\2197'; /* diagonal up-right arrow */
+    display: inline-block;
+    margin-left: 0.5rem;
+    transform: translate(-6px, 6px);
+    opacity: 0;
+    transition: transform var(--transision-fast), opacity var(--transision-fast);
+}
+
+.socialLinks a:hover::after,
+.socialLinks a:focus::after {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.socialIcon {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    /* flex-shrink: 0; */
+}
+
+.socialLinks {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(3, auto);
+    gap: 0.5rem;
+    
+}

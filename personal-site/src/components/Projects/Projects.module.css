@@ -1,0 +1,197 @@
+:root {
+    --max-width: 1100px;
+    --section-padding: 6rem;
+    --transision-fast: 0.25s ease;
+    --background: #ffffff;
+
+    --ring: #18181b;
+    --retro-black: #000000;
+    --retro-white: #ffffff;
+    --retro-medium: #777;
+     --retro-font: 'Courier New', Courier, monospace;
+}
+
+.projects {
+    /* min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative; */
+    margin-top: 6rem;
+    padding: var(--section-padding) 2rem;
+    background: var(--background);
+    color: #000;
+}
+
+.inner {
+    /* width: 100%; */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center; */
+}
+
+.header {
+    /* font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    letter-spacing: 0.02em; */
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    font-family: var(--retro-font);
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--retro-medium);
+    opacity: 0.8;
+    max-width: 600px;
+    line-height: 1.5;
+    /* margin-bottom: 1.5rem; */
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*repeat(auto-fit, minmax(280px, 1fr));*/
+    gap: 2rem;
+}
+
+.projectCard {
+    border: 2px solid var(--retro-medium);
+    padding: 1rem;
+    border-radius: 0.375rem;
+    transition: all var(--transision-fast);
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+.projectCard:hover, .projectCard:focus-visible {
+    box-shadow: 4px 4px 0 #000;
+    background-color: var(--retro-white);
+    color: var(--retro-black);
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    /* font-size: 1.25rem;
+    font-weight: 500; */
+    margin-bottom: 0.5rem;
+}
+
+.cardCategory {
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    color: var(--retro-medium);
+    margin-bottom: 1rem;
+}
+
+.projectTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-family: var(--retro-font);
+    /* margin-bottom: 0.5rem; */
+}
+
+.projectDescription {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.85;
+    margin: 1.5rem 0;
+    font-family: var(--retro-font);
+}
+
+.projectTechStack {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.projectTechStack li {
+    font-size: 0.75rem;
+    letter-spacing: 0.7rem;
+    background-color: var(--retro-medium);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+.techItem {
+    font-family: var(--retro-font);
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.previewButton,
+.repoLink {
+    background: transparent;
+    color: var(--retro-black);
+    border: 1px solid var(--retro-black);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.repoLink::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--retro-black);
+    border-radius: 6px;
+    transform: scale(0.92);
+    opacity: 0;
+    transition: transform var(--transision-fast), opacity var(--transision-fast), border-color var(--transision-fast);
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.repoLink {
+    position: relative;
+    display: inline-block;
+}
+
+.previewButton,
+.repoLink {
+    transition: color var(--transision-fast), background var(--transision-fast);
+}
+
+.previewButton:hover,
+.repoLink:hover {
+    color: var(--retro-black);
+}
+
+.previewButton:hover::after,
+.repoLink:hover::after {
+    transform: scale(1);
+    opacity: 1;
+    border-color: var(--retro-white);
+}
+
+@media (max-width: 900px) {
+.grid {
+grid-template-columns: 1fr;
+}
+}
+
+
+@media (max-width: 480px) {
+.actions {
+flex-direction: column;
+align-items: flex-start;
+}
+}

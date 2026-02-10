@@ -8,6 +8,7 @@
     --retro-black: #000000;
     --retro-white: #ffffff;
     --retro-medium: #777;
+    --retro-font: 'Courier New', Courier, monospace;
 }
 
 .hero {
@@ -50,6 +51,7 @@
 }
 
 .title {
+    font-family: var(--retro-font);
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -64,97 +66,174 @@
     line-height: 1.6;
     max-width: 420px;
     opacity: 0.85;
+    font-family: var(--retro-font);
 }
 
 .buttonsStyle {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, max-content);
+    gap: 0.5rem;
+    margin-left: 2.5rem; /* nudge buttons a little to the right */
 }
+
+.buttonsStyle a,
+.buttonsStyle a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
 .gameButton {
-    border: 2px solid var(--retro-medium);
+    border: 1px solid var(--retro-medium);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    /* gap: 0.5rem; */
     white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 0.375rem;
+    color: var(--retro-black);
 
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    font-family: monospace;
+    font-family: var(--retro-font);
     letter-spacing: 0.1em;
 
-    height: 2.5rem;
-    padding: 0.75rem 2rem;
+    height: 3rem;
+    padding: 0 1rem;
 }
+
+
 .retroButton {
     cursor: pointer;
     display: inline-flex;
+    position: relative;
+    z-index: 0;
     align-items: center;
     gap: 0.5rem;
     white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 0.375rem;
 
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    font-family: monospace;
+    font-family: var(--retro-font);
     letter-spacing: 0.1em;
 
-    height: 2.5rem;
-    padding: 0.75rem 2rem;
+    height: 3rem;
+    padding: 0 1.25rem;
 
     background-color: var(--retro-black);
-    color: #fff;
+    color: var(--retro-white);
 
     border: 2px solid var(--retro-black);
 
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.retroButton:hover {
-    background-color: var(--retro-black);
-    color: var(--retro-white);
+/* ensure visited/hover/focus states use intended colors */
+.gameButton:visited,
+.gameButton:hover,
+.gameButton:focus {
+    color: var(--retro-black);
+    text-decoration: none;
 }
 
-.retroButton:focus-visible {
+.retroButton:visited,
+.retroButton:hover,
+.retroButton:focus {
+    color: var(--retro-white);
+    text-decoration: none;
+}
+
+/* .retroButton:hover {
+    background-color: var(--retro-black);
+    color: var(--retro-white);
+} */
+ .retroButton::after {
+     /* temporarily disable pseudo-element so it doesn't cover the label */
+     display: none;
+ }
+
+.retroButton {
+     color: var(--retro-white) !important;
+}
+
+/* .retroButton:focus-visible {
     outline: none;
     box-shadow: 
         0 0 0 2px var(--ring),
         0 0 0 4px var(--background);
-}
+} 
 
 .retroButton:disabled {
     pointer-events: none;
     opacity: 0.5;
+}  */
+
+
+/* .gameButton a,
+.retroButton a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+} */
+
+.retroButton {
+  background-color: var(--retro-black);
+  color: var(--retro-white);
+}
+.retroButton:visited,
+.retroButton:hover,
+.retroButton:focus {
+  color: var(--retro-white);
+}
+
+.gameButton {
+  background: transparent;
+  color: var(--retro-black);
+}
+.gameButton:visited,
+.gameButton:hover,
+.gameButton:focus {
+  color: var(--retro-black);
+  text-decoration: none;
 }
 
 .contactButton {
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 0.75rem;
-    /* border: 2px solid var(--retro-medium); */
-    transition: all var(--transision-fast);
+        display: inline-grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 0.5rem;
+        padding: 0.5rem;
+        transition: all var(--transision-fast);
 }
 
 .contactButton a {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    border: 2px solid #000;
-    background: #fff;
+        border: 1px solid #000;
+        background: #fff;
+        box-sizing: border-box;
 
-    transition:
-                box-shadow 0.2s ease,
-                transform 0.2s ease;
+        transition:
+                                box-shadow 0.2s ease,
+                                transform 0.2s ease;
 }
 
 .contactButton img {
-  width: 40%;
-  height: 40%;
-  object-fit: contain;
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
 }
 
 .contactButton a:hover,
@@ -165,4 +244,19 @@
   transform: translateY(-2px);
 }
 
+@media screen and (max-width: 768px) {
+    .inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .imageWrapper {
+        order: -1;
+    }
+
+    .textWrapper {
+        align-items: center;
+    }
+    
+}
 

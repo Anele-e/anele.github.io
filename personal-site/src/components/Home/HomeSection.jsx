@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 import heroImage from "../../assets/image2.png";
-import githubImage from "../../assets/icons8-github-24.png"
-import linkdIn from "../../assets/icons8-linkedin-48.png"
+import githubImage from "../../assets/github-logo2.png"
+import linkdIn from "../../assets/linkedin.png"
 import mailImg from "../../assets/icons8-mail-50.png"
 
 
@@ -20,9 +20,8 @@ export default function Home() {
                         <span>Anele Dindili</span>
                     </h1>
                     <p className={styles.subtitle}>
-                        Hi, i'm a Software Engineer with balajfasihfasiififhwwa<br />fdhy
-                        reguherwiuhgieurhtigauerhguhdfsiuhgvhdsfgiuhiauewrhgiuh<br />
-                        uyguyfouyiuhretieurhtieruhgidhfiguhieruhdxgvifdhgidfgifhdg.
+                        Hi, I'm a Software Developer with experience in backend projects and data engineering principles. I have a passion for learning new technologies and building projects that solve real-world problems. 
+                        I'm currently looking for new opportunities to grow my skills and contribute to exciting projects.
                     </p>
                
 
@@ -40,12 +39,8 @@ export default function Home() {
                             </a>
                         </div>
                         <div className={styles.buttonsStyle}>
-                            <div>
-                                <button className={styles.retroButton}><a href="#about" download>Download CV</a></button>
-                            </div>
-                            <div>
-                                <button className={styles.gameButton}><a href="#about" target="_blank">Card Game</a></button>
-                            </div>
+                            <a className={styles.retroButton} href="https://drive.google.com/file/d/1IEcGsXlE2Z4hIBJJL8V_Kn0pDrlJCgUJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download CV</a>
+                            <a className={styles.gameButton} href="https://docs.google.com/document/d/1t0aUfLbsDhdu8VLkjwC05So0wfVle595E4uN15WJero/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View Certifications</a>
                         </div>
                     </div>
                 </div>
