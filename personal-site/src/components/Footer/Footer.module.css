@@ -48,6 +48,7 @@
 
 .socialLinks a {
     color: var(--retro-white);
+    font-family: var(--retro-font);
     text-decoration: none;
     position: relative;
     padding-right: 0.25rem;
@@ -83,6 +84,13 @@
     grid-template-columns: repeat(3, auto);
     gap: 0.5rem;
     
+}
+.text {
+    font-size: 0.9rem;
+    font-family: var(--retro-font);
+    color: var(--retro-white);
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 @media (min-width: 1024px) {

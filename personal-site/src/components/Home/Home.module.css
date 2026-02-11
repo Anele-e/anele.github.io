@@ -42,6 +42,7 @@
     height: auto;
     object-fit: contain;
     filter: grayscale(100%) contrast(1.1);
+    pointer-events: none;
 }
 
 .textWrapper {
@@ -70,9 +71,10 @@
 }
 
 .buttonsStyle {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 0.5rem;
+    display: flex;
+    /* grid-template-columns: repeat(2, max-content); */
+    gap: 0.75rem;
+    align-items: center;
     margin-left: 2.5rem; /* nudge buttons a little to the right */
 }
 
@@ -230,6 +232,11 @@
                                 transform 0.2s ease;
 }
 
+.buttonsStyle,
+.contactButton {
+    margin-left: 2.5rem;
+}
+
 .contactButton img {
     width: 60%;
     height: 60%;
@@ -260,7 +267,7 @@
 
 @media screen and (max-width: 768px) {
     .hero {
-        padding: 4rem 1rem;
+        padding: 8rem 1rem 4rem 1rem;
         min-height: auto;
     }
 
@@ -288,8 +295,7 @@
     }
 
     .buttonsStyle {
-        margin-left: 0;
-        grid-template-columns: 1fr;
+        flex-direction: column;
         width: 100%;
         max-width: 320px;
     }
@@ -301,8 +307,11 @@
         justify-content: center;
     }
 
-    .contactButton {
+    .contactButton,
+    .buttonsStyle {
         margin-left: 0;
+    }
+    .contactButton {
         justify-content: center;
     }
     
@@ -310,32 +319,8 @@
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding: 3rem 0.75rem;
-    }
-    
-    .title {
-        font-size: 2rem;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-    }
-    
-    .contactButton {
-        gap: 0.4rem;
-        padding: 0.4rem;
-    }
-    
-    .contactButton a {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .gameButton,
-    .retroButton {
-        font-size: 0.75rem;
-        height: 2.75rem;
-        padding: 0 0.875rem;
+        padding: 6rem 0.75rem 3rem 0.75rem;
     }
 }
+
 
