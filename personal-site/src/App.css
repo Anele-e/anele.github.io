@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem 2rem 0rem 2rem;
-  text-align: center;
+  /* max-width: 1280px; */
+  width: 100%;
+  margin: 0;
+  padding: 0rem;
+  /* text-align: center; */
 }
 
 .app-container {
@@ -15,6 +16,6 @@
   flex: 1;
 }
 
-html, body {
+/* html, body {
     overflow-x: hidden;
-}
+} */
