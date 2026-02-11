@@ -171,7 +171,35 @@ color: var(--text-secondary);
 font-family: var(--retro-font);
 }
 
+
+@media (max-width: 900px) {
+    .entries {        
+        gap: 3rem 1.5rem;
+    }
+
+    .left {
+        margin-bottom: 3rem;
+    }
+
+    .right {
+        margin-top: 10rem;
+    }
+}
+
 @media (max-width: 768px) {
+
+.education {
+    padding: 4rem 1rem;
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2rem;
+}
+
 .line {
     left: 0.75rem;
     transform: none;
@@ -188,18 +216,56 @@ font-family: var(--retro-font);
 .card {
     max-width: 100%;
     text-align: left;
+    padding: 1.5rem;
 }
 
-.left {
-    margin-top: 0;
-}
 .left,
 .right {
-    justify-self: center;
+    grid-column: 1;
+    /* justify-self: center; */
+    justify-self: start;
     text-align: left;
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .institutionHeader {
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
+
+.logo {
+    height: 35px;
+    /* margin-right: 0.75rem; */
+}
+}
+
+@media (max-width: 480px) {
+    .education {
+        padding: 3rem 0.75rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .line {
+        left: 0.5rem;
+    }
+
+    .entries {
+        padding-left: 1.5rem;
+    }
+    .card {
+        padding: 1.25rem;
+    }
+    .institution {
+        font-size: 1.1rem;
+    }
+    .degree {
+        font-size: 1rem;
+    }
+    .description {
+        font-size: 0.9rem;
+    }
 }

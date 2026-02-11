@@ -192,3 +192,76 @@ textarea::placeholder {
     display: inline-block;
     margin-right: 0.25rem;
 }
+
+
+@media screen and (max-width: 900px) {
+    .contactInfo {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 4rem 1rem;
+        min-height: auto;
+    }
+    
+    .header {
+        margin-bottom: 3rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .semiTitle {
+        font-size: 1.3rem;
+    }
+    
+    .contactInfo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contactForm {
+        margin: 0;
+        padding: 1.5rem;
+    }
+    
+    .inputGroup {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .inputGroup input {
+        width: 100%;
+    }
+    
+    .directContact .contactDetails {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        padding: 3rem 0.75rem;
+    }
+    
+    .contactForm {
+        padding: 1.25rem;
+    }
+    
+    input,
+    textarea {
+        font-size: 0.65rem;
+    }
+    
+    label {
+        font-size: 0.9rem;
+    }
+    
+    .submitButton {
+        font-size: 0.65rem;
+        padding: 0.5rem 1rem;
+    }
+}
