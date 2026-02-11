@@ -23,9 +23,10 @@
     align-items: center;
     border-bottom: 1px solid var(--retro-medium);
     justify-content: space-between;
-    padding: 0 6rem;
+    /* padding: 0 6rem; */
+    padding: 0 2rem;
     z-index: 1000;
-    background-color: transparent;
+    background-color: var(--retro-white);
     transition: background-color var(--transform-fast),
                 box-shadow var(--transform-fast),
                 height var(--transform-fast);
@@ -34,7 +35,7 @@
 
 .scrolled {
     background: var(--retro-white);
-    box-shadow: 0 1px 0 rgba(red, green, blue, 0.1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -164,4 +165,10 @@ display: flex;
 @media (max-height: 520px) {
     .navLinks { display: none; }
     .burger { display: flex; }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 0 6rem;
+  }
 }
