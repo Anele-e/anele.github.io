@@ -6,7 +6,7 @@ export default function Projects() {
         {id: "full-stack-1", title: "TRADE.TWO", category: "Full Stack", description: "A web application that connects workers with clients looking for plumbers, electricians, and other tradespeople. Built with React, FastApi, Docker, and postgreSQL.", techStack: ["React", "FastAPI", "Docker", "PostgreSQL"], repoLink: "https://github.com/Anele-e/TRADE_TWO"},
          {id: "consume-github-api", title: "Consume GitHub API", category: "Python", description: "Built a simple command line interface (CLI) to fetch the recent activity of a GitHub user and display it in the terminal.", techStack: ["Python", "CLI tools", "API"], repoLink: "https://github.com/Anele-e/github-user-activity"},
          {id: "expanse-tracker", title: "Expense Tracker", category: "Python", description: "A Python-based expense tracking application with a command-line interface.", techStack: ["Python", "CLI tools"], repoLink: "https://github.com/Anele-e/Expense-Tracker"},
-        {id: "full-stack-2", title: "Dummy", category: "Full Stack", description: "Still in development.", techStack: ["API", "Python", "Airflow"], repoLink: "https://github.com/Anele-e"},
+        {id: "south-african-reading-trends", title: "south-african-reading-trends", category: "Data Focused", description: "Ingesting book data from differnt sources to analyze the reading trends of South Africans", techStack: ["API", "Python","SQL", "Airflow", "Power Bi"], repoLink: "https://github.com/Anele-e/south_african_reading_trends.git"},
     ];
     return (
         <section className={styles.projects} id="projects">
@@ -14,7 +14,7 @@ export default function Projects() {
                 <header className={styles.header}>
                     <h2 className={styles.title}>Projects</h2>
                     <p className={styles.subtitle}>
-                        A selection of systems, games and data-focused work
+                        A showcase of projects I've built and continue to develop.
                     </p>
                 </header>
                 <div className={styles.projectGrid}>
