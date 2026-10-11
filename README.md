@@ -20,8 +20,7 @@ accessible.
 
 ```text
 ROLE        Software Developer
-FOCUS       Backend systems, data pipelines, dashboards
-STYLE       Minimal, monochrome, practical, project-first
+FOCUS       Backend systems, data pipelines
 ```
 
 ## Projects
