@@ -70,6 +70,7 @@
     padding: 1rem;
     border-radius: 0.375rem;
     transition: all var(--transision-fast);
+    display: flex;
     flex-direction: column;
     justify-content: space-between;  
 }
@@ -87,7 +88,8 @@
     margin-bottom: 0.5rem;
 }
 
-.cardCategory {
+.projectCategory {
+    display: inline-block;
     font-size: 0.875rem;
     letter-spacing: 0.15em;
     opacity: 0.6;
@@ -115,21 +117,82 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.65rem;
     padding: 0;
     margin-bottom: 2rem;
 }
 
 .projectTechStack li {
-    font-size: 0.75rem;
-    letter-spacing: 0.7rem;
-    background-color: var(--retro-medium);
-    color: #fff;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+    background-color: var(--retro-white);
+    color: var(--retro-black);
 }
 .techItem {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--retro-black);
+    border-radius: 0.375rem;
     font-family: var(--retro-font);
+    transition:
+        background-color var(--transision-fast),
+        color var(--transision-fast),
+        box-shadow var(--transision-fast),
+        transform var(--transision-fast);
+}
+
+.techItem:hover,
+.techItem:focus-visible {
+    background-color: var(--retro-black);
+    color: var(--retro-white);
+    box-shadow: 3px 3px 0 var(--retro-medium);
+    transform: translate(-1px, -1px);
+}
+
+.techItem::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.45rem);
+    z-index: 2;
+    min-width: max-content;
+    max-width: 10rem;
+    transform: translate(-50%, 0.25rem);
+    opacity: 0;
+    pointer-events: none;
+    background: var(--retro-black);
+    color: var(--retro-white);
+    border: 1px solid var(--retro-black);
+    box-shadow: 3px 3px 0 var(--retro-medium);
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: center;
+    transition: opacity var(--transision-fast), transform var(--transision-fast);
+}
+
+.techItem:hover::after,
+.techItem:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.logoMark,
+.logoMark svg {
+    display: block;
+}
+
+.logoMark {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.logoMark svg {
+    width: 100%;
+    height: 100%;
 }
 
 .actions {

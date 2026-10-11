@@ -1,7 +1,4 @@
 import styles from './Footer.module.css';
-import githubImage from "../../assets/github3.png"
-import linkdIn from "../../assets/icons8-linkedin-48.png"
-import mailImg from "../../assets/icons8-mail-50.png"
 
 export default function Footer() {
     return (

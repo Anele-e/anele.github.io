@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './Contact.module.css';
 import sendImg from "../../assets/send.png"
 
