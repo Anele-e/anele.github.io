@@ -1,11 +1,5 @@
 # Anele Dindili
 
-```text
-+--------------------------------------------------------------+
-|  DEVELOPER PORTFOLIO                                         |
-|  Home  |  Education  |  Projects  |  Contact                 |
-+--------------------------------------------------------------+
-```
 
 Hi, I'm Anele Dindili, a software developer with experience in backend
 projects, data engineering principles, and practical full-stack delivery. I
